@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QA Playground Suite">
+
+    <listeners>
+        <listener class-name="org.testng.reporters.XMLReporter"/>
+        <listener class-name="org.testng.reporters.jq.Main"/>
+    </listeners>
+
+    <!-- Test Configuration Parameters -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="baseUrl" value="https://qaplayground.dev/"/>
+
+    <!-- Test Suite -->
+    <test name="QAPlayground">
+        <!-- Test Classes -->
+        <classes>
+            <class name="main.java.com.noyes.selenium_java.tests.QAPlaygroundTest">
+                <methods>
+                    <exclude name="testDynamicTable"/>
+                    <exclude name="testVerifyAccount"/>
+                    <include name="testTagInputs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
