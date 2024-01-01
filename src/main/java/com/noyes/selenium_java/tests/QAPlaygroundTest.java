@@ -1,5 +1,6 @@
 package main.java.com.noyes.selenium_java.tests;
 import main.java.com.noyes.selenium_java.pages.QAPlayground.PgDynamicTable;
+import main.java.com.noyes.selenium_java.pages.QAPlayground.PgMultilevelDropdown;
 import main.java.com.noyes.selenium_java.pages.QAPlayground.PgTagInputs;
 import main.java.com.noyes.selenium_java.pages.QAPlayground.PgVerifyAccount;
 import org.testng.Assert;
@@ -75,6 +76,26 @@ public class QAPlaygroundTest extends TestBase {
             }
 
         }
+
+    }
+
+    @Parameters({"browser", "baseUrl"})
+    @Test
+    public void testMultilevelDropdown(String browser, String baseUrl) throws InterruptedException {
+
+        String pageUrl = "apps/multi-level-dropdown/";
+
+        //define page classes
+        PgMultilevelDropdown multilevelDropdown = new PgMultilevelDropdown(driver);
+
+        //load page in driver
+        driver.get(baseUrl + pageUrl);
+
+        //Navigate into the sub-menus and assert menu items text and link
+
+        //verify lists
+        multilevelDropdown.verifySettings();
+        multilevelDropdown.verifyAnimals();
 
     }
 

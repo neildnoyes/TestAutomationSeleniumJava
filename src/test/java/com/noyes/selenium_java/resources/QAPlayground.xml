@@ -18,7 +18,8 @@
                 <methods>
                     <exclude name="testDynamicTable"/>
                     <exclude name="testVerifyAccount"/>
-                    <include name="testTagInputs"/>
+                    <exclude name="testTagInputs"/>
+                    <include name="testMultilevelDropdown"/>
                 </methods>
             </class>
         </classes>
