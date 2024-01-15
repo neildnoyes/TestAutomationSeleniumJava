@@ -19,7 +19,8 @@
                     <exclude name="testDynamicTable"/>
                     <exclude name="testVerifyAccount"/>
                     <exclude name="testTagInputs"/>
-                    <include name="testMultilevelDropdown"/>
+                    <exclude name="testMultilevelDropdown"/>
+                    <include name="testSortableList"/>
                 </methods>
             </class>
         </classes>

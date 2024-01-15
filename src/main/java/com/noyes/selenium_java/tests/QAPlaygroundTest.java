@@ -1,8 +1,5 @@
 package main.java.com.noyes.selenium_java.tests;
-import main.java.com.noyes.selenium_java.pages.QAPlayground.PgDynamicTable;
-import main.java.com.noyes.selenium_java.pages.QAPlayground.PgMultilevelDropdown;
-import main.java.com.noyes.selenium_java.pages.QAPlayground.PgTagInputs;
-import main.java.com.noyes.selenium_java.pages.QAPlayground.PgVerifyAccount;
+import main.java.com.noyes.selenium_java.pages.QAPlayground.*;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -98,5 +95,24 @@ public class QAPlaygroundTest extends TestBase {
         multilevelDropdown.verifyAnimals();
 
     }
+    @Parameters({"browser", "baseUrl"})
+    @Test
+    public void testSortableList(String browser, String baseUrl) throws InterruptedException {
+
+        String pageUrl = "apps/sortable-list/";
+
+        //define page classes
+        PgSortableList sortableList = new PgSortableList(driver);
+
+        //load page in driver
+        driver.get(baseUrl + pageUrl);
+
+        //drag all the names into order
+        sortableList.reorderNames();
+
+        //check order
+        sortableList.checkOrder();
+    }
+
 
 }
